@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS projects;
+
 CREATE TABLE projects (
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
@@ -6,6 +8,8 @@ CREATE TABLE projects (
     start_date DATE,
     end_date DATE
 );
+
+DROP TABLE IF EXISTS experience;
 
 CREATE TABLE experience (
     id SERIAL PRIMARY KEY,
@@ -16,6 +20,8 @@ CREATE TABLE experience (
     end_date DATE
 );
 
+DROP TABLE IF EXISTS education;
+
 CREATE TABLE education (
     id SERIAL PRIMARY KEY,
     institution TEXT NOT NULL,
@@ -24,3 +30,6 @@ CREATE TABLE education (
     start_date DATE,
     end_date DATE
 );
+
+INSERT INTO projects (title, description, tech_stack)
+VALUES ('CV Website', 'Personal CV site', ARRAY['Python', 'Postgres']);
